@@ -1,5 +1,7 @@
-package main.java;
+package main.java.Collection;
 
+
+import main.java.Interfaces.MyList;
 
 import java.util.NoSuchElementException;
 

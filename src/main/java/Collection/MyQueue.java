@@ -1,6 +1,8 @@
-package main.java;
+package main.java.Collection;
 
-public class MyQueue implements MyList{
+import main.java.Interfaces.MyList;
+
+public class MyQueue implements MyList {
 
     private MyLinkedList list = new MyLinkedList();
 

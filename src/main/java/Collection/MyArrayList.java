@@ -1,8 +1,10 @@
-package main.java;
+package main.java.Collection;
+
+import main.java.Interfaces.MyList;
 
 import java.util.NoSuchElementException;
 
-public class MyArrayList implements MyList{
+public class MyArrayList implements MyList {
     private static final int INITIAL_CAPACITY = 10;
     private int size;
     private Object[] array;

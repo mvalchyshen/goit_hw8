@@ -1,4 +1,6 @@
-package main.java;
+package main.java.Collection;
+
+import main.java.Interfaces.MyCollection;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;

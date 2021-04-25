@@ -1,10 +1,12 @@
 package main.java;
 
-import java.util.HashMap;
+import main.java.Collection.MyArrayList;
+import main.java.Collection.MyHashMap;
+import main.java.Collection.MyLinkedList;
+import main.java.Collection.Stack;
 
 public class Demo {
     public static void main(String[] args) {
-/*
         MyArrayList arrayList = new MyArrayList();
         for (int i = 0; i < 10; i++) {
             arrayList.add(i);
@@ -74,7 +76,6 @@ public class Demo {
         queue.add(null);
         System.out.println("Queue : \n" +
                 queue + "\nsize: " + queue.size());
-*/
 
         MyHashMap hashMap = new MyHashMap();
         for (int i = 0; i < 20; i++) {

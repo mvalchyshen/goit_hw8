@@ -1,4 +1,4 @@
-package main.java;
+package main.java.Interfaces;
 
 public interface MyCollection {
     int size();

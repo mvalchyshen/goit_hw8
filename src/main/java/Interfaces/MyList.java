@@ -1,4 +1,4 @@
-package main.java;
+package main.java.Interfaces;
 
 public interface MyList extends MyCollection{
     void add(Object value);
