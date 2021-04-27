@@ -7,17 +7,18 @@ import java.util.NoSuchElementException;
 
 public class Stack implements MyCollection {
 
-    private Node first;
-    private Node last;
+    private Node head;
+    private Node tail;
     private int size;
 
     public void push(Object value) {
+        Node node = new Node(value);
         if (size == 0) {
-            first = last = new Node(value);
+            head = tail = node;
         } else {
-            Node x = first;
-            first = new Node(value);
-            first.next = x;
+            Node x = head;
+            head = node;
+            node.next = x;
         }
         size++;
     }
@@ -35,20 +36,22 @@ public class Stack implements MyCollection {
         Node delete;
         if (index == 0) {
             delete = nodeIndex(0);
-            first = delete.next;
+            head = delete.next;
             delete.element = null;
+            delete.next = null;
         } else {
             delete = nodeIndex(index);
             Node prev = nodeIndex(index - 1);
             prev.next = delete.next;
             delete.element = null;
+            delete.next = null;
         }
         size--;
     }
 
 
     private Node nodeIndex(int index) {
-        Node cur = first;
+        Node cur = head;
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
@@ -57,8 +60,8 @@ public class Stack implements MyCollection {
 
     @Override
     public void clear() {
-        Node cur = first;
-        first = last = null;
+        Node cur = head;
+        head = tail = null;
         while (cur != null) {
             Node next = cur.next;
             cur.element = null;
@@ -72,12 +75,12 @@ public class Stack implements MyCollection {
         if (size == 0) {
             return null;
         }
-        return first.element;
+        return head.element;
     }
 
     public Object pop() {
-        Node x = first;
-        first = x.next;
+        Node x = head;
+        head = x.next;
         size--;
         return x.element;
     }
@@ -104,7 +107,7 @@ public class Stack implements MyCollection {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
-        Node cur = first;
+        Node cur = head;
         while (cur != null) {
             sb.append(cur.element);
             if (cur.next != null) {
